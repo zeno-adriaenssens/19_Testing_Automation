@@ -4,7 +4,7 @@
 <fmt:formatDate var="year" value="${Date}" pattern="yyyy"/>
 
 <footer>
-    <p class="font-weight-lighter">&copy; <c:out value="${year}" /> ucll - no cookies were baked creating this website</p>
+    <p class="font-weight-lighter">&copy; <c:out value="${year}" /> ucll - First 100 customers recieve free ogrecookies!</p>
 </footer>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

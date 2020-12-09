@@ -16,7 +16,8 @@
 
 <div class="container">
     <main>
-        <h1>Registered patients</h1>
+       <!-- <a href="index.jsp"> Terug naar index</a>  -->
+        <h1>Gerechten overview</h1>
         <c:choose>
             <c:when test="${not empty patients}">
                 <table class="table table-striped">
@@ -26,16 +27,19 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach var="patient" items="${patients}">
+                    <c:forEach var="meal" items="${meals}">
                         <tr>
-                            <td><a href="Controller?command=PatientDetails&ssn=${patient.SSN}"><c:out value='${patient.SSN}'/></a></td>
+                            <td>${meal.productName}</td>
+                            <td>${meal.typeName}</td>
+                            <td><c:if test="${meal.price != 0.0}">${meal.price}</c:if>
+                            <td>${meal.description}</td>
                         </tr>
                     </c:forEach>
                     </tbody>
                 </table>
             </c:when>
             <c:otherwise>
-                <p><em>No patients found</em></p>
+                <p id="empty">Er zijn geen maaltijden op het menu</p>
             </c:otherwise>
         </c:choose>
     </main>

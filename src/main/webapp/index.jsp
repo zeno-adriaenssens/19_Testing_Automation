@@ -16,8 +16,9 @@
 <div class="container">
     <main>
         <div class="jumbotron">
-            <h1>Homepage</h1>
-            <p>This is the homepage.</p>
+            <h1>Restaurant Shrek</h1>
+            <p>In dit restaurant vindt u al onze lekkere gerechten!</p>
+
         </div>
     </main>
 </div>

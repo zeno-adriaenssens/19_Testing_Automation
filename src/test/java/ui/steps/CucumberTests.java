@@ -8,6 +8,9 @@ import org.junit.runner.RunWith;
         features={"src/test/resources/features"},
         glue={"ui/steps"},
         plugin={"json:target/ui-test.json"}
-)
+        )
+
 public class CucumberTests {
+
+
 }
