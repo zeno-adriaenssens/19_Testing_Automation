@@ -11,18 +11,17 @@ public class MealsService {
     private List<Meals> meals = new ArrayList<Meals>();
 
     public MealsService() {
-        meals.add(new Meals("Niet-veggie Lasagne","Pasta","4.50","Met vlees en extra kaas"));
-        meals.add(new Meals("Veggie lasagne","Pasta","4.00","Vegetarisch zonder kaas"));
-        meals.add(new Meals("Broodje kaas","Broodje", "2.50", "Met kaas en glutenvrij"));
-        meals.add(new Meals("Tonijn Wrap","Wrap", "2.90", "Met tonijn en glutenvrij"));
-        meals.add(new Meals("Broodje groenten","Broodje", "2.50", "Met alleen groenten"));
-        meals.add(new Meals("Broodje boulet","Broodje", "3.00","Met boulet en gluten"));
-        meals.add(new Meals("Kip Wrap","Wrap", "3.10", "Met kip en gluten"));
-        meals.add(new Meals("Spagheti bolongaise","Pasta", "5.00", "Met vlees en gluten"));
-        meals.add(new Meals("Tomatensoep", "Soep", "3.75", "Vegetarisch"));
-        meals.add(new Meals("Broodje hesp", "Broodje", "3.00", "Met vlees en gluten"));
-        meals.add(new Meals("Kippensoep", "Soep", "4.00", "Met vleesballetjes"));
-        meals.add(new Meals("Broodje kaas", "Broodje", "2.50", "Vegetarisch, bevat lactose en gluten"));
+        meals.add(new Meals("Niet-veggie Lasagne","Pasta","4.50","Met vlees en extra kaas", "nee"));
+        meals.add(new Meals("Veggie lasagne","Pasta","4.00","Vegetarisch zonder kaas", "ja"));
+        meals.add(new Meals("Tonijn Wrap","Wrap", "2.90", "Met tonijn en glutenvrij", "nee"));
+        meals.add(new Meals("Broodje groenten","Broodje", "2.50", "Met alleen groenten", "ja"));
+        meals.add(new Meals("Broodje boulet","Broodje", "3.00","Met boulet en gluten", "nee"));
+        meals.add(new Meals("Kip Wrap","Wrap", "3.10", "Met kip en gluten","nee"));
+        meals.add(new Meals("Spagheti bolongaise","Pasta", "5.00", "Met vlees en gluten", "nee"));
+        meals.add(new Meals("Tomatensoep", "Soep", "3.75", "Vegetarisch","ja"));
+        meals.add(new Meals("Broodje hesp", "Broodje", "3.00", "Met vlees en gluten","nee"));
+        meals.add(new Meals("Kippensoep", "Soep", "4.00", "Met vleesballetjes","nee"));
+        meals.add(new Meals("Broodje kaas", "Broodje", "2.00", "Vegetarisch, bevat lactose en gluten","ja"));
     }
 
     public static MealsService getInstance() {

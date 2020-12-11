@@ -8,6 +8,7 @@ public class Meals {
     private String typeName;
     private double price;
     private String description;
+    private String vegetarisch;
 
 
     public Meals(String productName, String typeName, double price, String description) {
@@ -15,6 +16,7 @@ public class Meals {
         setTypeName(typeName);
         setPrice(price);
         setDescription(description);
+        setVegetarisch(vegetarisch);
     }
 
 
@@ -48,5 +50,13 @@ public class Meals {
 
     private void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getVegetarisch() {
+        return vegetarisch;
+    }
+
+    public void setVegetarisch(String vegetarisch) {
+        this.vegetarisch = vegetarisch;
     }
 }

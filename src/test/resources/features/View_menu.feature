@@ -21,12 +21,30 @@ Feature: View menu
 
   Scenario Outline: Customer gets the list of all meals and each meal has a price
 
-    Given there are meals on the menu with given price
+    Given there are meals on the menu all the information
     When Yarne looks at the menu
     Then Yarne should see each "<Meal>" with its respective "<Price>"
     Examples:
     | Meal				        | Price		  |
-    | Broodje kaas            	| 2.50        |
+    | Broodje kaas            	| 2.00        |
     | Spagheti bolongaise     	| 5.00        |
     | Kippensoep               	| 4.00        |
 
+  Scenario: Customer sees an overview of meals sorted by type
+
+    Given there are meals on the menu all the information
+    When Yarne looks at the menu
+    Then Yarne should see all the Meals grouped by their Type
+
+
+
+  Scenario Outline: Customer gets the list of all meals and it’s specified if it is vegetarian and if it has allergens in it
+
+    Given there are meals on the menu all the information
+    When Yarne looks at the menu
+    Then Yarne should see each "<Meal>" with information over the "<Description>" and if it is "<Vegetarian>"
+    Examples:
+    | Meal				        | Description               | Vegetarian	|
+    | Niet-veggie Lasagne     	| Met vlees en extra kaas   | nee           |
+    | Veggie lasagne           	| Vegetarisch zonder kaas   | ja		    |
+    | Kip Wrap                	| Met kip en gluten         | nee           |

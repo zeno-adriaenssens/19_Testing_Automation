@@ -37,7 +37,7 @@ public class OverviewPage extends Page {
         for (WebElement tr : trs) {
             List<WebElement> tds = tr.findElements(By.tagName("td"));
             for (WebElement td : tds) {
-                String a = td.getAttribute("innerHTML");
+                String productName = td.getAttribute("innerHTML");
                 if (meal.equals(td.getAttribute("innerHTML"))) {
                     containtsMeal = true;
 
