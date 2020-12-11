@@ -5,9 +5,10 @@
 <html>
 
 <jsp:include page="head-default.jsp">
-    <jsp:param name="title" value="Patient Overview"/>
+    <jsp:param name="title" value="Meal overview"/>
 </jsp:include>
 
+<!-- Our overview jsp file shows the overview all meals -->
 <body>
 
 <jsp:include page="navbar.jsp">
@@ -19,11 +20,15 @@
        <!-- <a href="index.jsp"> Terug naar index</a>  -->
         <h1>Gerechten overview</h1>
         <c:choose>
-            <c:when test="${not empty patients}">
+            <c:when test="${not empty meals}">
                 <table class="table table-striped">
                     <thead class="thead-light">
                     <tr>
-                        <th scope="col">SSN</th>
+                        <th scope="col">Meal</th>
+                        <th>Type</th>
+                        <th>Price</th>
+                        <th>Description</th>
+                        <th>Vegetarisch</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -33,6 +38,7 @@
                             <td class="typeName">${meal.typeName}</td>
                             <td>${meal.price}</td>
                             <td>${meal.description}</td>
+                            <td>${meal.vegetarisch}</td>
                         </tr>
                     </c:forEach>
                     </tbody>

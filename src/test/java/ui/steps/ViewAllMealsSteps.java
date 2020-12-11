@@ -26,25 +26,15 @@ public class ViewAllMealsSteps {
 
     @Before
     public void setUp() {
-        //System.setProperty("webdriver.chrome.driver", "/Users/.../web3pers/chromedriver");
-        // windows: gebruik dubbele \\ om pad aan te geven
-        // hint: zoek een werkende test op van web 2 ...
+        /**
+         * You need to add The path of your own Chromedrive to be able to run the tests
+         * You can uncomment and add your own path
+         */
 
-        System.setProperty("webdriver.gecko.driver", "C:\\Users\\Zeno\\Desktop\\geckodriver-v0.28.0-win64\\geckodriver.exe");
-        driver = new FirefoxDriver();
+        //System.setProperty("webdriver.chrome.driver", "D:\\Ucll 2020-2021\\Webontwikkeling 2\\Chromedriver + Selenium + jstl\\chromedriver.exe");
+        driver = new ChromeDriver();
 
-        meals.add(new Meals("Niet-veggie Lasagne","Pasta",4.50,"Met vlees en extra kaas"));
-        meals.add(new Meals("Veggie lasagne","Pasta",4.00,"Vegetarisch zonder kaas"));
-        meals.add(new Meals("Broodje kaas","Broodje", 2.50, "Met kaas en glutenvrij"));
-        meals.add(new Meals("Tonijn Wrap","Wrap", 2.90, "Met tonijn en glutenvrij"));
-        meals.add(new Meals("Broodje groenten","Broodje", 2.50, "Met alleen groenten"));
-        meals.add(new Meals("Broodje boulet","Broodje", 3.0,"Met boulet en gluten"));
-        meals.add(new Meals("Kip Wrap","Wrap", 3.10, "Met kip en gluten"));
-        meals.add(new Meals("Spagheti bolongaise","Pasta", 5.00, "Met vlees en gluten"));
-        meals.add(new Meals("Tomatensoep", "Soep", 3.75, "Vegetarisch"));
-        meals.add(new Meals("Broodje hesp", "Broodje", 3.00, "Met vlees en gluten"));
-        meals.add(new Meals("Kippensoep", "Soep", 4.00, "Met vleesballetjes"));
-        meals.add(new Meals("Broodje kaas", "Broodje", 2.50, "Vegetarisch, bevat lactose en gluten"));
+        driver.get(path);
     }
 
     @After

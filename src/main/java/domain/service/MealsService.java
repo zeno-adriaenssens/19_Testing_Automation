@@ -10,6 +10,10 @@ public class MealsService {
     private static MealsService INSTANCE;
     private List<Meals> meals = new ArrayList<Meals>();
 
+    /**
+     * This page will make a sorted list of our meals
+     */
+
     public MealsService() {
         meals.add(new Meals("Niet-veggie Lasagne","Pasta","4.50","Met vlees en extra kaas", "nee"));
         meals.add(new Meals("Veggie lasagne","Pasta","4.00","Vegetarisch zonder kaas", "ja"));
@@ -42,13 +46,13 @@ public class MealsService {
     public List<Meals> sortMeals(){
         List<Meals> sortedList = new ArrayList<Meals>();
 
-        sortedList.add(new Meals("Broodjes:","",0, ""));
+        sortedList.add(new Meals("Broodjes:","","", "", ""));
         sortedList.addAll(sort("Broodje"));
-        sortedList.add(new Meals("Pastas:","",0, ""));
+        sortedList.add(new Meals("Pasta's:","","", "", ""));
         sortedList.addAll(sort("Pasta"));
-        sortedList.add(new Meals("Wrap:","",0, ""));
+        sortedList.add(new Meals("Wraps:","","", "", ""));
         sortedList.addAll(sort("Wrap"));
-        sortedList.add(new Meals("Soep:","",0, ""));
+        sortedList.add(new Meals("Soepen:","","", "", ""));
         sortedList.addAll(sort("Soep"));
         return sortedList;
     }
@@ -60,7 +64,7 @@ public class MealsService {
             if (b.getTypeName().equals(typeName))
                 sortedList.add(b);
         }
-        sortedList.add(new Meals("","","", ""));
+        sortedList.add(new Meals("","","", "", ""));
         return sortedList;
     }
 }

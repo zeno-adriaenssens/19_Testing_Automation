@@ -3,15 +3,19 @@ package domain.model;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+/**
+ * This page make our meal objects
+ */
+
 public class Meals {
     private String productName;
     private String typeName;
-    private double price;
+    private String price;
     private String description;
     private String vegetarisch;
 
 
-    public Meals(String productName, String typeName, double price, String description) {
+    public Meals(String productName, String typeName, String price, String description, String vegetarisch) {
         setProductName(productName);
         setTypeName(typeName);
         setPrice(price);
@@ -40,7 +44,7 @@ public class Meals {
         return price;
     }
 
-    private void setPrice(double price) {
+    private void setPrice(String price) {
         this.price = price;
     }
 
