@@ -29,9 +29,9 @@
                     <tbody>
                     <c:forEach var="meal" items="${meals}">
                         <tr>
-                            <td>${meal.productName}</td>
-                            <td>${meal.typeName}</td>
-                            <td><c:if test="${meal.price != 0.0}">${meal.price}</c:if>
+                            <td class="productName">${meal.productName}</td>
+                            <td class="typeName">${meal.typeName}</td>
+                            <td>${meal.price}</td>
                             <td>${meal.description}</td>
                         </tr>
                     </c:forEach>

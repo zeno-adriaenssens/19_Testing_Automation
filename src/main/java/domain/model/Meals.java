@@ -34,7 +34,7 @@ public class Meals {
         this.typeName = typeName;
     }
 
-    public double getPrice() {
+    public String getPrice() {
         return price;
     }
 

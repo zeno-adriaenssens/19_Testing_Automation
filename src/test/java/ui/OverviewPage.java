@@ -14,23 +14,42 @@ public class OverviewPage extends Page {
         driver.get(getPath()+"?command=Overview");
     }
 
-    //String productName, String typeName, double price, String description
     public boolean containsMeals(ArrayList<Meals> meals) {
-        List<WebElement> tds = driver.findElements(By.tagName("td"));
+        List<WebElement> tds = driver.findElements(By.className("productName"));
         int size = meals.size();
         int counter = 0;
         for (Meals meal : meals) {
             for (WebElement td : tds) {
-                    String d = td.getAttribute("value");
-                if (meal.getProductName().equals(d)) {
+                    String d = td.getAttribute("innerHTML");
+                    String a = meal.getProductName();
+                if (a.equals(d)) {
                     counter++;
+                    break;
                 }
             }
         }
-        if (counter == size) {
-            return true;
-        }else {
-            return false;
-        }
+        return counter == size;
     }
+
+    public boolean containsPrice(String meal , String price) {
+        List<WebElement> trs = driver.findElements(By.tagName("tr"));
+        Boolean containtsMeal = false;
+        for (WebElement tr : trs) {
+            List<WebElement> tds = tr.findElements(By.tagName("td"));
+            for (WebElement td : tds) {
+                String a = td.getAttribute("innerHTML");
+                if (meal.equals(td.getAttribute("innerHTML"))) {
+                    containtsMeal = true;
+
+                }
+                if (containtsMeal && price.equals(td.getAttribute("innerHTML"))) {
+                    return true;
+                }
+
+            }
+            containtsMeal = false;
+        }
+        return  false;
+    }
+
 }
